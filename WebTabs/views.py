@@ -44,14 +44,23 @@ def submit_field_data(request):
         items_list = list(request.POST.items())
         for (key1, value1), (key2, value2) in zip(items_list[::2], items_list[1::2]):
             if 'field' in key1 and 'selection' in key2:
-                field_key= key1
+                field_key = key1
                 field_value = value1 
-                selection_value= value2
+                selection_value = value2
+                
+                # Extract required and readable checkbox values
+                required = 'required' in field_key
+                readable = 'readable' in field_key
+                
+                # Remove checkbox indicators from field key
+                field_key = field_key.split('|')[0]
                 
                 form_data = {
                     'field_key': field_key,
                     'field_value': field_value,
-                    'selection_value': selection_value
+                    'selection_value': selection_value,
+                    'required': required,
+                    'readable': readable,
                 }
                
                 form_data_list.append(form_data)
