@@ -118,12 +118,16 @@
                   </select>
                   <div class="row">
                     <div class="col-mb-4">
-                      <input type="hidden" class="checkbox" name="form1|required|1" value="0">
-                      <input type="checkbox" class="checkbox" value="1" name="form1|required|1" />
+                      <input type="checkbox" class="checkbox" name="form1|required|1" value="0"
+                        onclick="toggleCheckbox(this)">
                       <label for="checkbox1">Required</label>
+                    </div>
+                  </div>
 
-                      <input type="hidden" class="checkbox" name="form1|readable|1" value="0">
-                      <input type="checkbox" class="checkbox" name="form1|readable|1" value="1">
+                  <div class="row">
+                    <div class="col-mb-4">
+                      <input type="checkbox" class="checkbox" name="form1|readable|1" value="0"
+                        onclick="toggleCheckbox(this)">
                       <label for="checkbox2">Readable</label>
                     </div>
                   </div>
@@ -237,13 +241,13 @@
       $("#formsContainer").on("click", ".remove-form", removeForm);
       function addField(formId, fieldCounter) {
         var newFieldId = "field" + fieldCounter;
-        var fieldName = '${formId}-field${fieldCounter}';
+        var fieldName = `${formId}-field${fieldCounter}`;
 
         // Check if the field name already exists
-        while ($([name = "${fieldName}"]).length > 0) {
+        while ($(`[name="${fieldName}"]`).length > 0) {
           fieldCounter++;
           newFieldId = "field" + fieldCounter;
-          fieldName = '${formId}-field${fieldCounter}';
+          fieldName = `${formId}-field${fieldCounter}`;
         }
 
         var newField = `
@@ -377,7 +381,16 @@
       });
 
     });
+    function toggleCheckbox(checkbox) {
+      checkbox.value = checkbox.checked ? "1" : "0";
+      // If the checkbox is unchecked, set the value to "0" explicitly
+      if (!checkbox.checked) {
+        $(checkbox).attr('value', '0');
+      }
+    }
+
 
   </script>
 </body>
+
 </html>
