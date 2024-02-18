@@ -1,136 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
   <style>
-    .nav-tabs{
-      background-color:#A0D6B4;
+    .nav-tabs {
+      background-color: #A0D6B4;
     }
+
     .nav-tabs .nav-link.active {
-      background-color: #107969; /* Set the background color for the active tab */
-     /* Set the font color for the active tab */
-      border-color: #6b958f; /* Set the border color for the active tab */
+      background-color: #107969;
+      /* Set the background color for the active tab */
+      /* Set the font color for the active tab */
+      border-color: #6b958f;
+      /* Set the border color for the active tab */
     }
+
     .nav-tabs :hover {
       color: white;
-      font-size: 20px; 
+      font-size: 20px;
     }
-    .nav-tabs.nav-link.active:hover{
+
+    .nav-tabs.nav-link.active:hover {
       color: #107969;
     }
+
     :root {
-      --primary-color: #2b7874;; /* replace with your desired color code */
+      --primary-color: #2b7874;
+      ;
+      /* replace with your desired color code */
     }
-    .bg-custom-primary{
+
+    .bg-custom-primary {
       background-color: var(--primary-color);
     }
+
     /* Make input boxes smaller */
-    input.form-control, select.form-select {
-      width: 250px; /* Adjust the width as needed */
+    input.form-control,
+    select.form-select {
+      width: 250px;
+      /* Adjust the width as needed */
     }
+
     body {
-      background: #fafafaeb; 
+      background: #fafafaeb;
     }
-  
-  </style> 
+  </style>
   <title>WebProject Tabs</title>
 </head>
+
 <body>
 
-        <div class="bg-custom-primary">
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active m-3 px-5 fs-5 text-dark" id="Tab1" data-bs-toggle="tab" href="#tab1Content"><b>Form Content</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link m-3 px-5 fs-5 text-dark" id="Tab2" data-bs-toggle="tab" href="#tab2Content"><b>Alignment</b></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link m-3 px-5 fs-5 text-dark" id="Tab3" data-bs-toggle="tab" href="#tab3Content"><b>Tab</b></a>
-            </li>
-          </ul>
-        </div>
+  <div class="bg-custom-primary">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active m-3 px-5 fs-5 text-dark" id="Tab1" data-bs-toggle="tab" href="#tab1Content"><b>Form
+            Content</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link m-3 px-5 fs-5 text-dark" id="Tab2" data-bs-toggle="tab"
+          href="#tab2Content"><b>Alignment</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link m-3 px-5 fs-5 text-dark" id="Tab3" data-bs-toggle="tab" href="#tab3Content"><b>Tab</b></a>
+      </li>
+    </ul>
+  </div>
 
-        <div class="mt-3 mx-5 p-2 text-dark">
-            <div class="tab-content mt-4">
-              <div class="tab-pane fade show active" id="tab1Content" role="tabpanel">
-                  <div id="formsContainer">
-                      <form class="dynamic-form" id="form1">
-                          <div class="row mb-3">
-                              <div class="col-md-3">
-                                  <label class="form-label">Form</label>
-                                  <div class="input-group">
-                                      <input type="text" class="form-control size" name="form1" placeholder="form1">
-                                  </div>
-                              </div>
-                              <div class="col-md-3">
-                                  <label class="form-label">Redirect path</label>
-                                  <div class="input-group">
-                                      <input type="text" class="form-control size" name= "form1 redirect path" placeholder="form1 Redirect Path">
-                                      <button class="btn btn-success ms-5 add-form" style="background-color: #92beab;color:black;" type="button"><b>+</b></button>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="row mb-3">
-                              <div class="col-md-9 dynamic-field">
-                                  <label class="form-label">Field Name 1</label>
-                                  <label for="fieldType" style="margin-left:290px" class="form-label" id="form-name">Selection Box</label>                                                          
-                                  <div class="input-group">
-                                      <input type="text" class="form-control" name="form1|field1" placeholder="form1 Field name 1">
-                                      <select class="form-select ms-1" name="form1 selection1">
-                                        <option value="Varchar Field">Varchar Field</option>
-                                        <option value="Number Field">Number Field</option>
-                                        <option value="Password">Password</option>
-                                        <option value="Select Box">Select Box</option>
-                                        <option value="Number Field">Number Field</option>
-                                        <option value="Email">Email</option>
-                                        <option value="Radio Button">Radio Button</option>
-                                        <option value="Calc Field">Calc Field</option>
-                                        <option value="Check Box">Check Box</option>
-                                        <option value="Image">Image</option>
-                                        <option value="Logo">Logo</option>
-                                        <option value="Comment Box">Comment Box</option>
-                                        <option value="Button">Button</option>
-                                        <option value="Tables">Tables</option>
-                                        <option value="Video Field">Video Field</option>
-                                        <option value="File Field">File Field</option>
-                                        <option value="Audio Field">Audio Field</option>
-                                      </select>                                    
-                                      <div class="row">
-                                        <div class="col-mb-4">                      
-                                          <label><input type="checkbox" class="checkbox" value="1" name="form1|required|1" />Required</label>
-                                          <label><input type="checkbox" class="checkbox" value="1" name="form1|field1|readable|1" />Readable</label>                                   
-                                        </div>
-                                      </div>              
-                                      <button class="btn btn-success ms-5 add-field" style="background-color: #92beab;color:black;" type="button"><b>+</b></button>
-                                  </div>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-                  <div class="row mb-0">
-                    <div class="col-md-8">
-                        <!-- Submit button -->
-                          <button id="submitBtn" class="btn btn-primary" style ="margin-left:25px;">Submit</button>
-                          <button type="button" class="btn btn-secondary ms-2 cancel-form">Cancel</button>
-                          <button type="reset" class="btn btn-danger ms-2">Reset</button>
+  <div class="mt-3 mx-5 p-2 text-dark">
+    <div class="tab-content mt-4">
+      <div class="tab-pane fade show active" id="tab1Content" role="tabpanel">
+        <div id="formsContainer">
+          <form class="dynamic-form" id="form1">
+            <div class="row mb-3">
+              <div class="col-md-3">
+                <label class="form-label">Form</label>
+                <div class="input-group">
+                  <input type="text" class="form-control size" name="form1" placeholder="form1">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Redirect path</label>
+                <div class="input-group">
+                  <input type="text" class="form-control size" name="form1 redirect path"
+                    placeholder="form1 Redirect Path">
+                  <button class="btn btn-success ms-5 add-form" style="background-color: #92beab;color:black;"
+                    type="button"><b>+</b></button>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-9 dynamic-field">
+                <label class="form-label">Field Name 1</label>
+                <label for="fieldType" style="margin-left:290px" class="form-label" id="form-name">Selection Box</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="form1|field1" placeholder="form1 Field name 1">
+                  <select class="form-select ms-1" name="form1 selection1">
+                    <option value="Varchar Field">Varchar Field</option>
+                    <option value="Number Field">Number Field</option>
+                    <option value="Password">Password</option>
+                    <option value="Select Box">Select Box</option>
+                    <option value="Number Field">Number Field</option>
+                    <option value="Email">Email</option>
+                    <option value="Radio Button">Radio Button</option>
+                    <option value="Calc Field">Calc Field</option>
+                    <option value="Check Box">Check Box</option>
+                    <option value="Image">Image</option>
+                    <option value="Logo">Logo</option>
+                    <option value="Comment Box">Comment Box</option>
+                    <option value="Button">Button</option>
+                    <option value="Tables">Tables</option>
+                    <option value="Video Field">Video Field</option>
+                    <option value="File Field">File Field</option>
+                    <option value="Audio Field">Audio Field</option>
+                  </select>
+                  <div class="row">
+                    <div class="col-mb-4">
+                      <input type="hidden" class="checkbox" name="form1|required|1" value="0">
+                      <input type="checkbox" class="checkbox" value="1" name="form1|required|1" />
+                      <label for="checkbox1">Required</label>
+
+                      <input type="hidden" class="checkbox" name="form1|readable|1" value="0">
+                      <input type="checkbox" class="checkbox" name="form1|readable|1" value="1">
+                      <label for="checkbox2">Readable</label>
                     </div>
                   </div>
+                  <button class="btn btn-success ms-5 add-field" style="background-color: #92beab;color:black;"
+                    type="button"><b>+</b></button>
+                </div>
               </div>
+            </div>
+          </form>
+        </div>
+        <div class="row mb-0">
+          <div class="col-md-8">
+            <!-- Submit button -->
+            <button id="submitBtn" class="btn btn-primary" style="margin-left:25px;">Submit</button>
+            <button type="button" class="btn btn-secondary ms-2 cancel-form">Cancel</button>
+            <button type="reset" class="btn btn-danger ms-2">Reset</button>
           </div>
         </div>
-      
-          
-      
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script>
-        $(document).ready(function () {
-            var formCounter = 1;
-            function generateFormHtml(formId) {
-                return `
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var formCounter = 1;
+      function generateFormHtml(formId) {
+        return `
                     <form class="dynamic-form" id="${formId}">
                         <div class="row mb-3">
                             <div class="col-md-3">
@@ -177,8 +201,12 @@
                                     </select>
                                     <div class="row">
                                       <div class="col-mb-4">                  
-                                        <label><input type="checkbox" class="checkbox1" value="1" name="${formId}|required|1">Required</label>
-                                        <label><input type="checkbox" class="checkbox2" value="1" name="${formId}|readable|1" />Readable</label>                                        
+                                        <input type="hidden" class="checkbox"  name="${formId}|required|1"  value="0" >
+                                          <input type="checkbox" class="checkbox" value="1"  name="${formId}|required|1"  >
+                                          <label for="checkbox1">Required</label>
+                                          <input type="hidden" class="checkbox"   name="${formId}|readable|1" value="0" >
+                                          <input type="checkbox" class="checkbox"  name="${formId}|readable|1" value="1" >
+                                          <label for="checkbox2">Readable</label>                                     
                                       </div>
                                     </div>      
                                     <button class="btn btn-success ms-5 add-field" style="background-color: #92beab;color:black;" type="button">+</button>
@@ -187,38 +215,38 @@
                         </div>
                     </form>
                 `;
-            }
+      }
 
-            function addForm() {
-                var newFormId = getNextFormNumber();
-                var newFormHtml = generateFormHtml(newFormId);
-                var newForm = $(newFormHtml);
-                newForm.find('.add-form').removeClass('add-form').addClass('remove-form').html('-');
-                newForm.find('input[type="text"]').val('');
-                newForm.find('.form-label').each(function (index) {
-                    var labelType = index === 0 ? '' : (index === 1 ? 'Redirect path' : 'Field Name');
-                    $(this).text(`${newFormId}  ${labelType} `);
-                });
-                $('#formsContainer').append(newForm);
-            }
+      function addForm() {
+        var newFormId = getNextFormNumber();
+        var newFormHtml = generateFormHtml(newFormId);
+        var newForm = $(newFormHtml);
+        newForm.find('.add-form').removeClass('add-form').addClass('remove-form').html('-');
+        newForm.find('input[type="text"]').val('');
+        newForm.find('.form-label').each(function (index) {
+          var labelType = index === 0 ? '' : (index === 1 ? 'Redirect path' : 'Field Name');
+          $(this).text(`${newFormId}  ${labelType} `);
+        });
+        $('#formsContainer').append(newForm);
+      }
 
-            function removeForm() {
-                $(this).closest(".dynamic-form").remove();
-            }
-            $("#formsContainer").on("click", ".add-form", addForm);
-            $("#formsContainer").on("click", ".remove-form", removeForm);
-            function addField(formId, fieldCounter) {
-                var newFieldId = "field" + fieldCounter;
-                var fieldName = `${formId}-field${fieldCounter}`;
-            
-                // Check if the field name already exists
-                while ($(`[name="${fieldName}"]`).length > 0) {
-                    fieldCounter++;
-                    newFieldId = "field" + fieldCounter;
-                    fieldName = `${formId}-field${fieldCounter}`;
-                }
-                
-                var newField = `
+      function removeForm() {
+        $(this).closest(".dynamic-form").remove();
+      }
+      $("#formsContainer").on("click", ".add-form", addForm);
+      $("#formsContainer").on("click", ".remove-form", removeForm);
+      function addField(formId, fieldCounter) {
+        var newFieldId = "field" + fieldCounter;
+        var fieldName = '${formId}-field${fieldCounter}';
+
+        // Check if the field name already exists
+        while ($([name = "${fieldName}"]).length > 0) {
+          fieldCounter++;
+          newFieldId = "field" + fieldCounter;
+          fieldName = '${formId}-field${fieldCounter}';
+        }
+
+        var newField = `
                     <div class="row mb-3">
                         <div class="col-md-9 dynamic-field">
                             <label for="${newFieldId}" class="form-label">Field name ${fieldCounter} </label>
@@ -247,8 +275,12 @@
                                 </select>
                                 <div class="row">
                                   <div class="col-mb-4">              
-                                    <label><input type="checkbox" class="checkbox-${formId}" value="1" name="${formId}|required|${fieldCounter}" />Required</label>
-                                    <label><input type="checkbox" class=""checkbox-${formId}" value="1" name="${formId}|readable|${fieldCounter}" />Readable</label>    
+                                    <input type="hidden" class="checkbox-${formId}"  name="${formId}|required|${fieldCounter}"  value="0" />
+                                          <input type="checkbox" class="checkbox-${formId}" value="1"  name="${formId}|required|${fieldCounter}"  />
+                                          <label for="checkbox1">Required</label>
+                                          <input type="hidden" class="checkbox-${formId}"  name="${formId}|readable|${fieldCounter}" value="0" />
+                                          <input type="checkbox" class="checkbox-${formId}"  name="${formId}|readable|${fieldCounter}"value="1"  />
+                                          <label for="checkbox2">Readable</label>  
                                   </div>
                                 </div>      
                                 <button class="btn btn-danger ms-5 remove-field" name="removebutton" type="button">-</button>
@@ -257,107 +289,94 @@
                     </div>
                 `;
 
-                $('#' + formId).append(newField);
-            }
+        $('#' + formId).append(newField);
+      }
 
-            function removeField() {
-                $(this).closest(".row").remove();
-            }
+      function removeField() {
+        $(this).closest(".row").remove();
+      }
 
-            $("#formsContainer").on("click", ".add-field", function () {
-                var formId = $(this).closest('.dynamic-form').attr('id');
-                var fieldCounter = $('#' + formId).find('.dynamic-field').length + 1;
-                addField(formId, fieldCounter);
-            });
+      $("#formsContainer").on("click", ".add-field", function () {
+        var formId = $(this).closest('.dynamic-form').attr('id');
+        var fieldCounter = $('#' + formId).find('.dynamic-field').length + 1;
+        addField(formId, fieldCounter);
+      });
 
-            $("#formsContainer").on("click", ".remove-field", removeField);
+      $("#formsContainer").on("click", ".remove-field", removeField);
 
-            function getNextFormNumber() {
-                var existingFormIds = $('.dynamic-form').map(function () {
-                    return parseInt(this.id.replace('form', ''), 10);
-                }).get();
+      function getNextFormNumber() {
+        var existingFormIds = $('.dynamic-form').map(function () {
+          return parseInt(this.id.replace('form', ''), 10);
+        }).get();
 
-                if (existingFormIds.length === 0) {
-                    return 'form2';
-                }
+        if (existingFormIds.length === 0) {
+          return 'form2';
+        }
 
-                var maxFormId = Math.max.apply(null, existingFormIds);
-                return 'form' + (maxFormId + 1);
-            }
-            $(document).ready(function () {
-              $('#submitBtn').on('click', function () {
-                  // Set checkbox values to 0 for unselected and 1 for selected
-                  $('.checkbox').each(function () {
-                      $(this).val(this.checked ? 1 : 0);
-                  });
-          
-                  // Serialize form data into an array of objects
-                  var formDataArray = $('form').serializeArray();
-          
-                  // Convert the array of objects into a JSON object
-                  var formDataJSON = {};
-                  $.each(formDataArray, function(index, field){
-                      formDataJSON[field.name] = field.value;
-                  });
-          
-                  // Send AJAX request to Django backend
-                  $.ajax({
-                      type: 'POST',
-                      url: '/submit_form_data/',  
-                      data: formDataJSON,
-                      success: function (response) {
-                          if (response.success) {
-                              console.log(formDataJSON);
-                              console.log('Form data submitted successfully!');
-                              alert("Form data submitted successfully!");
-                          } else {
-                              console.error('Failed to submit form data.');
-                              alert("Failed to submit form data.");
-                          }
-                      },
-                      error: function(jqXHR, textStatus, errorThrown) {
-                          console.error("AJAX Error: " + textStatus, errorThrown);
-                          alert("Failed to submit form data.");
-                      }
-                  });
-              });
+        var maxFormId = Math.max.apply(null, existingFormIds);
+        return 'form' + (maxFormId + 1);
+      }
+      $(document).ready(function () {
+        $('#submitBtn').on('click', function () {
+          var formDataArray = $('form').serializeArray();
+          var formDataJSON = {};
+          $.each(formDataArray, function (index, field) {
+            formDataJSON[field.name] = field.value;
           });
-          $(document).ready(function () {
-            $('#submitBtn').on('click', function () {
-        
-                // Serialize form data into an array of objects
-                var formDataArray = $('form').serializeArray();
-        
-                // Convert the array of objects into a JSON object
-                var formDataJSON = {};
-                $.each(formDataArray, function(index, field){
-                    formDataJSON[field.name] = field.value;
-                });
-        
-                // Send AJAX request to Django backend
-                $.ajax({
-                    type: 'POST',
-                    url: '/submit_field_data/',  
-                    data: formDataJSON,
-                    success: function (response) {
-                        if (response.success) {
-                            console.log(formDataJSON);
-                            console.log('Form data submitted successfully!');
-                            alert("Form data submitted successfully!");
-                        } else {
-                            console.error('Failed to submit form data.');
-                            alert("Failed to submit form data.");
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.error("AJAX Error: " + textStatus, errorThrown);
-                        alert("Failed to submit form data.");
-                    }
-                });
-            });
+
+          $.ajax({
+            type: 'POST',
+            url: '/submit_form_data/',
+            data: formDataJSON,
+            success: function (response) {
+              if (response.success) {
+                console.log(formDataJSON);
+                console.log('Form data submitted successfully!');
+                alert("Form data submitted successfully!");
+              } else {
+                console.error('Failed to submit form data.');
+                alert("Failed to submit form data.");
+              }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("AJAX Error: " + textStatus, errorThrown);
+              alert("Failed to submit form data.");
+            }
+          });
         });
-            
+      });
+      $(document).ready(function () {
+        $('#submitBtn').on('click', function () {
+
+          var formDataArray = $('form').serializeArray();
+          var formDataJSON = {};
+          $.each(formDataArray, function (index, field) {
+            formDataJSON[field.name] = field.value;
+          });
+
+          $.ajax({
+            type: 'POST',
+            url: '/submit_field_data/',
+            data: formDataJSON,
+            success: function (response) {
+              if (response.success) {
+                console.log(formDataJSON);
+                console.log('Field data submitted successfully!');
+                alert("Field data submitted successfully!");
+              } else {
+                console.error('Failed to submit Field data.');
+                alert("Failed to submit Field data.");
+              }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+              console.error("AJAX Error: " + textStatus, errorThrown);
+              alert("Failed to submit form data.");
+            }
+          });
         });
+      });
+
+    });
 
   </script>
 </body>
